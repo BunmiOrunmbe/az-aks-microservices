@@ -52,10 +52,9 @@ docker tag shoe-backend:v1 bunmiacr080.azurecr.io/shoe-backend:v1
 
 ## Push Images to Azure Container Registry
 
+docker push bunmiacr080.azurecr.io/shoe-frontend:v1
 
-docker push bunmiacr080.azurecr.io/frontend:v1
-
-docker push bunmiacr080.azurecr.io/backend:v1
+docker push bunmiacr080.azurecr.io/shoe-backend:v1
 
 Images in ACR
 ![image in acr1](docs/images%20in%20acr1.png)
