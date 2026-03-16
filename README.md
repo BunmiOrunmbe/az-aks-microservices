@@ -165,6 +165,3 @@ Azure Cloud Engineer
 Certifications
 
 • AZ-104 – Microsoft Azure Administrator
-=======
-# az-aks-microservices
->>>>>>> 628ee9bde880314e2e7d77f59c9652e014b0e8b6
