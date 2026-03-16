@@ -92,12 +92,18 @@ kubectl get nodes and pods
 
 
 Service IPs
-![service ips](docs/service%20ips.png)
+![service ips](docs/service-ips.png)
 
 ## Application Access
 
 Browser image
-![browser image](docs/browser%20image.png)
+![browser image](docs/browser-image.png)
+
+## Kubernetes Pods Running
+
+kubectl get pods
+
+![kubectl get pods](docs/kubectl-get-pods.png)
 
 ## Key Skills Demonstrated
 
