@@ -36,20 +36,26 @@ Docker for container build and packaging
 ### Build Docker Images
 
 
-docker build -t bunmiacr080.azurecr.io/frontend:v1
+docker build -t shoe-frontend:v1 ./frontend
 
-docker build -t bunmiacr080.azurecr.io/backend:v1
+docker build -t shoe-backend:v1 ./backend
 
 Built images
-![docker image](docs/docker%20image.png)
+![docker images](docs/docker-images.png)
 
+### Tag Image with ACR URL
+
+
+docker tag shoe-frontend:v1 bunmiacr080.azurecr.io/shoe-frontend:v1
+
+docker tag shoe-backend:v1 bunmiacr080.azurecr.io/shoe-backend:v1
 
 ## Push Images to Azure Container Registry
 
 
-docker build -t bunmiacr080.azurecr.io/frontend:v1
+docker push bunmiacr080.azurecr.io/frontend:v1
 
-docker build -t bunmiacr080.azurecr.io/backend:v1
+docker push bunmiacr080.azurecr.io/backend:v1
 
 Images in ACR
 ![image in acr1](docs/images%20in%20acr1.png)
@@ -108,48 +114,42 @@ Browser image
 ## Repository Structure
 
 ```
-azure-aks-microservices
 ├── README.md
 ├── backend
-│   ├── Dockerfile
+│   ├── Dockerfile      
 │   ├── app.py
 │   └── requirements.txt
 ├── docs
-│   ├── Browser image.png
-│   ├── Images in ACR.png
-│   ├── Screenshot 2026-02-13 113229.png
-│   ├── Service IPs.png
-│   ├── docker image.png
-│   ├── kubectl get deployments.png
-│   ├── kubectl get nodes.png
-│   ├── kubectl get pods.png
-│   ├── kubectl get svc.png
+│   ├── browser image.png
+│   ├── docker images.png
+│   ├── images in acr1.png
+│   ├── images in acr2.png
+│   ├── kubectl-get-nodes-and-pods.png
+│   ├── service ips.png
 │   ├── terraform apply.png
-│   ├── terraform plan.png
-│   └── tree.png
+│   └── terraform plan.png
 ├── frontend
 │   ├── Dockerfile
 │   ├── health.html
 │   └── index.html
 ├── k8s
 │   ├── backend
-│   │   ├── backend-deployment.yaml
-│   │   └── backend-service.yaml
-│   ├── database
-│   │   ├── postgres-deployment.yaml
-│   │   ├── postgres-pvc.yaml
-│   │   ├── postgres-secret.example.yaml
-│   │   ├── postgres-secret.yaml
-│   │   └── postgres-service.yaml
-│   ├── frontend
 │   │   ├── deployment.yaml
 │   │   └── service.yaml
-│   └── namespaces.yaml
+│   ├── database
+│   │   ├── Postgres-deployment.yaml
+│   │   ├── Postgres-pvc.yaml
+│   │   ├── postgres-secret.example.yaml
+│   │   ├── postgres-secret.yaml
+│   │   └── postgres-sevice.yaml
+│   └── frontend
+│       ├── deployment.yaml
+│       └── service.yaml
 └── terraform
     ├── acr.tf
     ├── main.tf
     ├── outputs.tf
-    ├── provider.tf
+    ├── providers.tf
     ├── terraform.tfstate
     ├── terraform.tfstate.backup
     ├── terraform.tfvars
