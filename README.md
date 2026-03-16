@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ## README.md File
 
 # Containerized Microservices Deployment on Azure Kubernetes Service (AKS) Using Terraform
